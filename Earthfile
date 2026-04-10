@@ -61,8 +61,8 @@ mise:
 
 mise-tools:
     FROM +mise
-    COPY mise.toml /
-    RUN mise trust /mise.toml
+    COPY mise.tools.toml /
+    RUN mise trust /mise.tools.toml
 
     ENV MISE_DATA_DIR=/mise_data
     RUN --secret GITHUB_TOKEN mise install

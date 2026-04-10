@@ -1,0 +1,5 @@
+[tools]
+grpcurl = "latest"
+kafkactl = "latest"
+kubeseal = "latest"
+"asdf:kubespy" = "latest"
