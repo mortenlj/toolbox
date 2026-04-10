@@ -55,7 +55,8 @@ mise:
             cosign \
             uv \
             rust \
-            build-base
+            build-base \
+            python3-dev
 
     SAVE IMAGE --cache-hint
 
