@@ -56,15 +56,15 @@ RUN apk add --no-cache \
 
 FROM mise AS mise-tools
 
-COPY mise.tools.toml /mise.toml
+COPY mise.tools.toml /
 
-RUN mise trust /mise.toml
+RUN mise trust /mise.tools.toml
 
 ENV MISE_DATA_DIR=/mise_data
 
 RUN --mount=type=secret,id=GITHUB_TOKEN \
     export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
-    mise install
+    mise install --env tools
 
 RUN find ${MISE_DATA_DIR}/installs/*/latest/ -executable -type f -exec cp {} /usr/local/bin +
 

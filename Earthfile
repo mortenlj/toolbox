@@ -62,11 +62,11 @@ mise:
 
 mise-tools:
     FROM +mise
-    COPY mise.tools.toml /mise.toml
-    RUN mise trust /mise.toml
+    COPY mise.tools.toml /
+    RUN mise trust /mise.tools.toml
 
     ENV MISE_DATA_DIR=/mise_data
-    RUN --secret GITHUB_TOKEN mise install
+    RUN --secret GITHUB_TOKEN mise install --env tools
     RUN find ${MISE_DATA_DIR}/installs/*/latest/ -executable -type f -exec cp {} /usr/local/bin +
 
     SAVE ARTIFACT /usr/local/bin localbin
