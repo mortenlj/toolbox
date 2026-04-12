@@ -1,4 +1,4 @@
-# kafka-debug
+# toolbox
 A docker image used for debugging kafka and kubernetes related issues
 
 Installs many tools (see the [Earthfile](./Earthfile) or [mise.toml](./mise.toml) for details).
@@ -36,15 +36,15 @@ Most notable:
 
 Launch a docker container:
 
-`docker run -ti --rm ghcr.io/mortenlj/kafka-debug:latest bash`
+`docker run -ti --rm ghcr.io/mortenlj/toolbox:latest bash`
 
 Launch into a kubernetes cluster:
 
-`kubectl run kafka-debug --image=ghcr.io/mortenlj/kafka-debug:latest`
+`kubectl run toolbox --image=ghcr.io/mortenlj/toolbox:latest`
 
 Exec into existing pod in kubernetes cluster:
 
-`kubectl exec -ti kafka-debug -- bash`
+`kubectl exec -ti toolbox -- bash`
 
 ## Building locally
 

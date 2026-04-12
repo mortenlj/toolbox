@@ -1,6 +1,6 @@
 # Architecture
 
-kafka-debug is a multi-tool debug container image for Kubernetes and Kafka troubleshooting.
+toolbox is a multi-tool debug container image for Kubernetes and Kafka troubleshooting.
 It bundles network, database, messaging, and cluster diagnostic tools into a single Alpine-based image, built for both `linux/amd64` and `linux/arm64`.
 
 ## Project Structure
@@ -91,7 +91,7 @@ Builds for both `linux/amd64` and `linux/arm64`.
 ```bash
 docker buildx build --platform=linux/amd64,linux/arm64 \
     --secret id=GITHUB_TOKEN \
-    -t ghcr.io/mortenlj/kafka-debug:latest .
+    -t ghcr.io/mortenlj/toolbox:latest .
 ```
 
 ## CI/CD
