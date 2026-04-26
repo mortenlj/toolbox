@@ -1,7 +1,7 @@
 # toolbox
 A docker image used for debugging kafka and kubernetes related issues
 
-Installs many tools (see the [Earthfile](./Earthfile) or [mise.toml](./mise.toml) for details).
+Installs many tools (see the [Dockerfile](./Dockerfile), [mise.pipx.toml](./mise.pipx.toml) and [mise.tools.toml](./mise.tools.toml) for details).
 
 Most notable:
 - curl
@@ -48,11 +48,4 @@ Exec into existing pod in kubernetes cluster:
 
 ## Building locally
 
-The build on GitHub wants a GITHUB_TOKEN, which is usually not needed locally.
-Just put the following in a file called `.secret`:
-
-```
-GITHUB_TOKEN=
-```
-
-Then build with: `earthly +deploy`
+`mise run docker-build`

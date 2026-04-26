@@ -1,2 +1,4 @@
-[tools]
-earthly = "latest"
+[tasks.docker-build]
+description = "Build the docker image"
+sources = ["files/**", "Dockerfile"]
+run = "docker buildx build --tag ttl.sh/mortenlj-toolbox:1h ."

@@ -62,8 +62,7 @@ RUN mise trust /mise.tools.toml
 
 ENV MISE_DATA_DIR=/mise_data
 
-RUN --mount=type=secret,id=GITHUB_TOKEN \
-    export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
+RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
     mise install --env tools
 
 RUN find ${MISE_DATA_DIR}/installs/*/latest/ -executable -type f -exec cp {} /usr/local/bin +
@@ -76,8 +75,7 @@ RUN mise trust /mise.pipx.toml
 
 ENV MISE_DATA_DIR=/mise_pipx
 
-RUN --mount=type=secret,id=GITHUB_TOKEN \
-    export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
+RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
     mise install --env pipx
 
 FROM tools AS kubetail
