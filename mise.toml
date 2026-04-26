@@ -1,7 +1,27 @@
-[tasks.docker-build]
-description = "Build the docker image"
-sources = ["files/**", "Dockerfile"]
-run = "docker buildx build --tag ttl.sh/mortenlj-toolbox:1h ."
-
 [task_config]
 includes = [".config/mise-lib/virtual_tasks.toml", ".config/mise-lib"]
+
+[tasks.test]
+description = "Run tests"
+
+[tasks.fmt]
+description = "Format source"
+
+[tasks.fmt-check]
+description = "Check formatting"
+
+[tasks.lint]
+description = "Lint the project"
+
+[tasks.lint-fix]
+description = "Run lint fixers"
+
+[tasks.ci]
+depends = ["test", "fmt-check", "lint"]
+description = "Run CI tasks"
+
+[tasks.build]
+description = "Build the project in debug mode"
+
+[tasks.release-build]
+description = "Build the project"
