@@ -1,5 +1,5 @@
 [task_config]
-includes = [".config/mise-lib/virtual_tasks.toml", ".config/mise-lib"]
+includes = [".config/mise-lib/virtual_tasks.toml", ".config/mise-lib/tasks"]
 
 [tasks.test]
 description = "Run tests"
