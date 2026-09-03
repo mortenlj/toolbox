@@ -16,9 +16,8 @@ jobs:
 
   build:
     permissions:
+      contents: read
       packages: write
-      checks: write
-      pull-requests: write
     needs: setup
     uses: mortenlj/mise-lib/.github/workflows/build-docker.yaml@main
     with:
